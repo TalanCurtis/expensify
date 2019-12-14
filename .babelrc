@@ -1,0 +1,10 @@
+{
+  "presets":[
+    // same presets as in package .json --presets=env,react
+    "env",
+    "react"
+  ],
+  "plugins":[
+    "transform-class-properties"
+  ]
+}
