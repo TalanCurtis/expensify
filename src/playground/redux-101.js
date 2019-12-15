@@ -1,4 +1,22 @@
 console.log("running redux-101");
+// action generators - functions that return an action.
+/*
+const incrementBy = (payload = {}) => {
+  type: 'INCREMENT';
+  incrementBy:  typeof action.incrementBy === 'number' ? action.incrementBy : 1;
+}
+*/
+const incrementBy = ({ incrementBy = 1 } = {} ) => ({
+  type: 'INCREMENT',
+  incrementBy
+});
+
+const decrementBy = ({ decrementBy = 1 } = {} ) => ({
+  type: 'DECREMENT',
+  decrementBy
+});
+
+
 // create a store
 import { createStore } from 'redux';
 
@@ -31,9 +49,13 @@ store.dispatch({
   incrementBy: 5
 });
 
+store.dispatch(incrementBy())
+store.dispatch(incrementBy({incrementBy:35}))
+
 // to unsubscribe to the store just call the function that subscribed in the first place.
 // unsubscribe();
 
+/*
 store.dispatch({
   type:'DECREMENT',
 
@@ -52,3 +74,4 @@ store.dispatch({
   type:'SET',
   count: 144
 });
+*/
