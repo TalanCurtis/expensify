@@ -16,11 +16,11 @@ const decrementBy = ({ decrementBy = 1 } = {} ) => ({
   decrementBy
 });
 
+// reducer
+// 1 . reducer are a pure functions. output only dependent on input.
+// 2. Never change state or action. Do not mutate. 
 
-// create a store
-import { createStore } from 'redux';
-
-const store = createStore((state = { count:0 }, action)=>{
+const countReducer = ( state = { count:0 }, action ) => {
   switch (action.type) {
     case 'INCREMENT':
       const incrementBy = typeof action.incrementBy === 'number' ? action.incrementBy : 1;
@@ -35,7 +35,12 @@ const store = createStore((state = { count:0 }, action)=>{
     default:
       return state;
   }
-});
+} ;
+
+// create a store
+import { createStore } from 'redux';
+
+const store = createStore(countReducer);
 
 console.log(store.getState());
 
