@@ -11,20 +11,14 @@ import './styles/styles.scss';
 
 const store = configureStore();
 
-store.dispatch( addExpense({ description:'water bill', amount:200, createdAt: -31000}));
-store.dispatch( addExpense({ description:'gas bill', amount:300, createdAt: -3000}));
-store.dispatch( addExpense({ description:'rent', amount:800, createdAt: -200}));
-store.dispatch( setTextFilter('bill'));
-
-setTimeout(() => {
-  store.dispatch( setTextFilter('rent'));
-}, 2000);
+store.dispatch( addExpense({ description:'water bill', amount:200, createdAt: 4500}));
+store.dispatch( addExpense({ description:'gas bill', amount:900, createdAt: 1000}));
+store.dispatch( addExpense({ description:'rent', amount:800, createdAt: 6000}));
 
 const state = store.getState();
 const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
 
 console.log( visibleExpenses);
-console.log(store.getState());
 
 const jsx = (
   <Provider store={store}>
