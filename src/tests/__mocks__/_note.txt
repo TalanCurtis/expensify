@@ -1,0 +1,5 @@
+a place to make mocks of third party libraries.
+
+// import moment from "moment";
+// can't import ^ have to do it the jest way below
+const moment = require.requireActual('moment')
