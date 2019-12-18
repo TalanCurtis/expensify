@@ -45,7 +45,6 @@ class ExpenseForm extends React.Component {
    }else {
      //clear error
      this.setState(()=>({error:''}));
-     console.log('Submitted')
      this.props.onSubmit({
        description:this.state.description,
        amount: (parseFloat(this.state.amount, 10) * 100).toFixed() * 1,
