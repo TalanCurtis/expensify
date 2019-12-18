@@ -1,0 +1,1 @@
+fixtures dir is a place for dummy data for your tests.
