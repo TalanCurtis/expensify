@@ -23,5 +23,7 @@ yarn-error.log*
 # mine
 package-lock.json
 .env
+.env.test
+.env.development
 _notes
 public/dist/
