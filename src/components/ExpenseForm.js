@@ -83,6 +83,7 @@ class ExpenseForm extends React.Component {
           <textarea 
             placeholder="Add a note fore your expense (optional)"
             onChange={this.onNoteChange}
+            value={this.state.note}
           >
           </textarea>
           <button>Add Expense</button>
