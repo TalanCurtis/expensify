@@ -1,5 +1,10 @@
 // using bem naming convention "block, element, modifier"
 // block__element--modifier
+
+// box-sizing changes it to the border is included in the height.
+* {
+  box-sizing: border-box;
+}
 html {
   // allows for rems to match pixel by power of 10.
   font-size: 62.5%;
